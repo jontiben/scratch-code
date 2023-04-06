@@ -1,5 +1,7 @@
-const int INTER_BLINK_DELAY = 200;
-const int INTER_VALUE_DELAY = 1000;
+// Makes an LED hooked up (WITH AT LEAST 150 Ohm RESISTOR) to digital pin 13 and GND flash in the pattern of the Fibonacci Sequence
+
+const int INTER_BLINK_DELAY = 200; // Delay between unit-flashes when 'displaying' a number
+const int INTER_VALUE_DELAY = 1000; // Delay between numbers
 
 void setup() {
   pinMode(13, OUTPUT);
@@ -27,8 +29,6 @@ void loop() {
     new_value = i + j;
     i = j;
     j = new_value;
-
     delay(INTER_VALUE_DELAY);
-
   }
 }
