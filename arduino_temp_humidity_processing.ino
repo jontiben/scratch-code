@@ -2,7 +2,7 @@
 
 #define DHTPIN A5 // The digital pin connected to the DHT sensor's signal pin
 #define BUTTONPIN 0
-#define DHTTYPE DHT11
+#define DHTTYPE DHT11 // Use DHT11 instead of DHT22
 
 DHT dht(DHTPIN, DHTTYPE);
 
@@ -31,11 +31,12 @@ const int f = 11; // br
 const int g = 12; // cc
 const int dt = 13; // dt
 
-void setup() {
+void setup() { 
   pinMode(2, INPUT);
   dht.begin();
-  Serial.begin(9600);
   pinMode(0, INPUT);
+
+  pinMode(A4, OUTPUT); // temp mode LED
 
   pinMode(ds1, OUTPUT);
   pinMode(ds2, OUTPUT);
@@ -50,6 +51,8 @@ void setup() {
   pinMode(f, OUTPUT);
   pinMode(g, OUTPUT);
   pinMode(dt, OUTPUT);
+
+  Serial.begin(9600);
 }
 
 void loop() {
@@ -67,10 +70,12 @@ void loop() {
   if (data_mode) {
     float temperature = dht.readTemperature();
     float fahrenheit_temp = temperature * 1.8 + 32;
+    analogWrite(A4, 255);
     display_number(fahrenheit_temp);
     Serial.println(String(fahrenheit_temp));
   } else {
     float humidity = dht.readHumidity();
+    analogWrite(A4, 0);
     display_number(humidity);
     Serial.println(String(humidity));
   }
