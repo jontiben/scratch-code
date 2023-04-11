@@ -189,13 +189,13 @@ Digital side:
   4       1st digit selection pin of display (1d)
   5~      4th digit selection pin of display (4d)
   6~      Through 100Ω resistor to a/tc of display
-  7       Through 100Ω resistor to b/tl "
-  8       Through 100Ω resistor to c/tr "
-  9~      Through 100Ω resistor to d/bl "
-  10~     Through 100Ω resistor to e/bc "
-  11~     Through 100Ω resistor to f/br "
-  12      Through 100Ω resistor to g/cc "
-  13      Through 100Ω resistor to dt "
+  7       Through 100Ω resistor to b/tl       "
+  8       Through 100Ω resistor to c/tr       "
+  9~      Through 100Ω resistor to d/bl       "
+  10~     Through 100Ω resistor to e/bc       "
+  11~     Through 100Ω resistor to f/br       "
+  12      Through 100Ω resistor to g/cc       "
+  13      Through 100Ω resistor to dt         "
 Analog side:
   5V  	  Positive strip of board
   GND(#2) Ground/negative strip of board
