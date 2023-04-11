@@ -179,3 +179,28 @@ void dot_on() {
 void dot_off() {
   digitalWrite(dt, LOW);
 }
+
+/* Arduino pin hookups:
+
+Digital side:
+  0 (RX)  Negative side of temp/humidity toggle button, after lead for resistor to ground.
+  2       3rd digit selection pin of display (3d)
+  3~      2nd digit selection pin of display (2d)
+  4       1st digit selection pin of display (1d)
+  5~      4th digit selection pin of display (4d)
+  6~      Through 100Ω resistor to a/tc of display
+  7       Through 100Ω resistor to b/tl "
+  8       Through 100Ω resistor to c/tr "
+  9~      Through 100Ω resistor to d/bl "
+  10~     Through 100Ω resistor to e/bc "
+  11~     Through 100Ω resistor to f/br "
+  12      Through 100Ω resistor to g/cc "
+  13      Through 100Ω resistor to dt "
+Analog side:
+  5V  	  Positive strip of board
+  GND(#2) Ground/negative strip of board
+  A4      Through 1000Ω resistor to positive side of temp mode indicator LED
+  A5      To signal wire (red) of temp/humidity sensor   
+
+*/
+
